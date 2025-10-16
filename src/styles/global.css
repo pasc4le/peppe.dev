@@ -1,1 +1,36 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-bblack-50: oklch(0.956 0.005 286.52);
+  --color-bblack-100: oklch(0.915 0.009 286.33);
+  --color-bblack-200: oklch(0.828 0.021 285.99);
+  --color-bblack-300: oklch(0.736 0.031 285.63);
+  --color-bblack-400: oklch(0.65 0.041 285.21);
+  --color-bblack-500: oklch(0.561 0.052 284.6);
+  --color-bblack-600: oklch(0.479 0.058 284.02);
+  --color-bblack-700: oklch(0.391 0.057 283.44);
+  --color-bblack-800: oklch(0.313 0.044 283.54);
+  --color-bblack-900: oklch(0.227 0.033 283.48);
+  --color-bblack-950: oklch(0.179 0.025 283.66);
+
+  --color-wblue-50: oklch(0.991 0.002 247.73);
+  --color-wblue-100: oklch(0.982 0.004 271.54);
+  --color-wblue-200: oklch(0.966 0.008 253.85);
+  --color-wblue-300: oklch(0.948 0.012 259.84);
+  --color-wblue-400: oklch(0.931 0.016 253.9);
+  --color-wblue-500: oklch(0.913 0.019 255.54);
+  --color-wblue-600: oklch(0.896 0.023 252.18);
+  --color-wblue-700: oklch(0.88 0.028 253.25);
+  --color-wblue-800: oklch(0.861 0.033 254.01);
+  --color-wblue-900: oklch(0.844 0.037 252.1);
+  --color-wblue-950: oklch(0.834 0.039 251.95);
+}
+
+html, body {
+  min-height: 100%;
+}

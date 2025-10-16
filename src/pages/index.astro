@@ -1,8 +1,59 @@
 ---
-import ProjectLine from '../components/ProjectLine.astro';
-import Layout from '../layouts/Layout.astro';
+import Section from '@/layouts/Section.astro';
+import Layout from '@/layouts/Layout.astro';
+import Boxed from '@/layouts/Boxed.astro';
+import Prose from '@/layouts/Prose.astro';
+
+import { siGithub } from 'simple-icons';
+
+import Pill, { type PillProps } from '@/components/Pill.astro';
+
+import Welcome from '@/components/Welcome.mdx';
+
+const socials: PillProps[] = [
+	{
+		icon: siGithub,
+		text: "GitHub",
+		href: "https://github.com/pasc4le/"
+	},
+	{
+		icon: {
+			path: "M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z",
+		},
+		text: "LinkedIn",
+		href: "https://www.linkedin.com/in/pasc4le/"
+	},
+	{
+		icon: {
+			path: "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z",
+		},
+		text: "Email",
+		href: "mailto:giuseppe.pascale03@gmail.com"
+	}
+] as const;
 ---
 
 <Layout>
-	<ProjectLine />
+	<Boxed>
+		<h1 class="font-bold tracking-tight text-xl text-bblack-950">Giuseppe Pascale</h1>
+		<hr class="my-2 border-bblack-100 mb-2 dark:border-bblack-800"/>
+		<Prose>
+			<Welcome />
+		</Prose>
+		<div class="flex gap-2 mt-2 flex-wrap mb-6">
+			{socials.map(social => (
+				<Pill icon={social.icon} text={social.text} href={social.href} />
+			))}
+		</div>
+		<Section title="Projects" class="mb-6">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in odio ac mauris aliquam viverra sit amet eu urna. Vestibulum vitae ligula vel velit laoreet aliquam. Ut ut auctor nunc. Nulla efficitur magna sit amet augue aliquam, vel dignissim libero auctor. Phasellus eget posuere purus, vel imperdiet ipsum. Sed ligula elit, rutrum at tellus ut, vulputate ultrices urna. Nulla facilisi. In id mi rhoncus, mattis est sed, luctus sapien. Nulla ac sollicitudin diam. Curabitur vitae commodo eros.
+			</p>
+		</Section>
+		<Section title="Awards and Certifications" class="mb-6">
+		</Section>
+		<Section title="Fun Facts and Hobbies" class="mb-6">
+			I'm coloblind, that's why this page has good color contrast. My hobbies are reading, playing videogaems, hiking and cooking.
+		</Section>
+	</Boxed>
 </Layout>

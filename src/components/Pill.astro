@@ -1,0 +1,23 @@
+---
+import SimpleIcon from '@/components/SimpleIcon.astro';
+import type { IconLike } from './types.ts';
+
+interface Props {
+  icon: IconLike;
+  text: string;
+  href: string;
+}
+
+export type PillProps = Props;
+
+const { icon, text, href } = Astro.props;
+---
+
+<div>
+  <a href={href} class="!text-bblack-950 dark:!text-bblack-50">
+    <div class="flex gap-2 items-center justify-center max-w-fit px-3 py-1 rounded-4xl border-1 border-zinc-200 dark:border-bblack-700 cursor-pointer dark:hover:bg-bblack-800 hover:bg-zinc-50">
+      <SimpleIcon icon={icon} class="h-4"/>
+      <p>{text}</p>
+    </div>
+  </a>
+</div>
