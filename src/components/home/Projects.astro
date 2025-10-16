@@ -1,0 +1,9 @@
+---
+import { getCollection, render } from "astro:content";
+
+import ProjectRenderer from "./ProjectRenderer.astro";
+
+const projects = await getCollection("projects");
+---
+
+{projects.map((project) => <ProjectRenderer {project} />)}

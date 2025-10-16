@@ -1,54 +1,56 @@
 ---
-import Main from '@/layouts/Main.astro';
+import Main from "@/layouts/Main.astro";
 
-import Section from '@/components/wrappers/Section.astro';
-import Boxed from '@/components/wrappers/Boxed.astro';
-import Prose from '@/components/wrappers/Prose.astro';
+import Section from "@/components/wrappers/Section.astro";
+import Boxed from "@/components/wrappers/Boxed.astro";
+import Prose from "@/components/wrappers/Prose.astro";
 
-import Pill, { type PillProps } from '@/components/Pill.astro';
+import Pill, { type PillProps } from "@/components/Pill.astro";
 
-import Welcome from '@/components/home/Welcome.mdx';
+import Projects from "@/components/home/Projects.astro";
+import Welcome from "@/components/home/Welcome.mdx";
+import ExternalLink from "@/components/ExternalLink.astro";
 
 const socials: PillProps[] = [
-	{
-		icon: "mdi:github",
-		text: "GitHub",
-		href: "https://github.com/pasc4le/"
-	},
-	{
-		icon: "mdi:linkedin",
-		text: "LinkedIn",
-		href: "https://www.linkedin.com/in/pasc4le/"
-	},
-	{
-		icon: "mdi:email",
-		text: "Email",
-		href: "mailto:giuseppe.pascale03@gmail.com"
-	}
+  {
+    icon: "mdi:github",
+    text: "GitHub",
+    href: "https://github.com/pasc4le/",
+  },
+  {
+    icon: "mdi:linkedin",
+    text: "LinkedIn",
+    href: "https://www.linkedin.com/in/pasc4le/",
+  },
+  {
+    icon: "mdi:email",
+    text: "Email",
+    href: "mailto:giuseppe.pascale03@gmail.com",
+  },
 ] as const;
 ---
 
 <Main>
-	<Boxed>
-		<h1 class="font-bold tracking-tight text-xl text-bblack-950">Giuseppe Pascale</h1>
-		<hr class="my-2 border-bblack-100 mb-2 dark:border-bblack-800"/>
-		<Prose>
-			<Welcome />
-		</Prose>
-		<div class="flex gap-2 mt-2 flex-wrap mb-6">
-			{socials.map(social => (
-			<Pill {...social} />
-			))}
-		</div>
-		<Section title="Projects" class="mb-6">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in odio ac mauris aliquam viverra sit amet eu urna. Vestibulum vitae ligula vel velit laoreet aliquam. Ut ut auctor nunc. Nulla efficitur magna sit amet augue aliquam, vel dignissim libero auctor. Phasellus eget posuere purus, vel imperdiet ipsum. Sed ligula elit, rutrum at tellus ut, vulputate ultrices urna. Nulla facilisi. In id mi rhoncus, mattis est sed, luctus sapien. Nulla ac sollicitudin diam. Curabitur vitae commodo eros.
-			</p>
-		</Section>
-		<Section title="Awards and Certifications" class="mb-6">
-		</Section>
-		<Section title="Fun Facts and Hobbies" class="mb-6">
-			I'm coloblind, that's why this page has good color contrast. My hobbies are reading, playing videogaems, hiking and cooking.
-		</Section>
-	</Boxed>
+  <Boxed>
+    <h1
+      class="font-bold tracking-tight text-xl text-bblack-950 dark:text-bblack-50"
+    >
+      Giuseppe Pascale
+    </h1>
+    <hr class="my-2 border-bblack-100 mb-2 dark:border-bblack-800" />
+    <Prose>
+      <Welcome components={{ a: ExternalLink }} />
+    </Prose>
+    <div class="flex gap-2 mt-2 flex-wrap mb-6">
+      {socials.map((social) => <Pill {...social} />)}
+    </div>
+    <Section title="Projects" class="mb-6">
+      <Projects />
+    </Section>
+    <Section title="Awards and Certifications" class="mb-6" />
+    <Section title="Fun Facts and Hobbies" class="mb-6">
+      I'm coloblind, that's why this page has good color contrast. My hobbies
+      are reading, playing videogaems, hiking and cooking.
+    </Section>
+  </Boxed>
 </Main>

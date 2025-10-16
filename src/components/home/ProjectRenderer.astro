@@ -1,0 +1,16 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import ProjectItem from "./ProjectItem.svelte";
+
+interface Props {
+    project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+
+const { Content } = await render(project);
+---
+
+<ProjectItem {project} client:load>
+    <Content />
+</ProjectItem>
