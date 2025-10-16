@@ -1,16 +1,13 @@
 ---
-import Section from '@/layouts/Section.astro';
-import Layout from '@/layouts/Layout.astro';
-import Boxed from '@/layouts/Boxed.astro';
-import Prose from '@/layouts/Prose.astro';
+import Main from '@/layouts/Main.astro';
 
-// import { Github } from 'simple-icons-astro';
-import { Mail } from '@lucide/astro';
-import LinkedinIcon from '@/assets/linkedin.svg';
+import Section from '@/components/wrappers/Section.astro';
+import Boxed from '@/components/wrappers/Boxed.astro';
+import Prose from '@/components/wrappers/Prose.astro';
 
 import Pill, { type PillProps } from '@/components/Pill.astro';
 
-import Welcome from '@/components/Welcome.mdx';
+import Welcome from '@/components/home/Welcome.mdx';
 
 const socials: PillProps[] = [
 	{
@@ -31,7 +28,7 @@ const socials: PillProps[] = [
 ] as const;
 ---
 
-<Layout>
+<Main>
 	<Boxed>
 		<h1 class="font-bold tracking-tight text-xl text-bblack-950">Giuseppe Pascale</h1>
 		<hr class="my-2 border-bblack-100 mb-2 dark:border-bblack-800"/>
@@ -54,4 +51,4 @@ const socials: PillProps[] = [
 			I'm coloblind, that's why this page has good color contrast. My hobbies are reading, playing videogaems, hiking and cooking.
 		</Section>
 	</Boxed>
-</Layout>
+</Main>
