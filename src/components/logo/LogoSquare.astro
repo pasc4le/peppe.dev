@@ -1,0 +1,15 @@
+---
+interface Props {
+  class: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg viewBox="0 0 100 100" class:list={[className ?? "w-full h-auto"]} xmlns="http://www.w3.org/2000/svg">
+  <g id="logo-square">
+    <path class="text-black dark:text-white" id="circle" fill-rule="evenodd" clip-rule="evenodd" d="M51.9324 13.0435C71.5425 13.0435 87.4396 28.9406 87.4396 48.5507C87.4396 68.1608 71.5425 84.058 51.9324 84.058C32.3223 84.058 16.4251 68.1608 16.4251 48.5507C16.4251 28.9406 32.3223 13.0435 51.9324 13.0435ZM52.1546 20.7729C36.6906 20.773 24.1546 33.309 24.1546 48.7729C24.1546 64.2369 36.6906 76.7729 52.1546 76.7729C67.6185 76.7729 80.1546 64.2369 80.1546 48.7729C80.1545 33.309 67.6185 20.7729 52.1546 20.7729Z" fill="currentColor"/>
+    <path class="text-black dark:text-white" id="tiny-circle" d="M51.9946 40.7731C56.3245 40.7732 59.8345 44.2831 59.8345 48.613C59.8345 52.9429 56.3245 56.4528 51.9946 56.4529C47.6647 56.4529 44.1548 52.9429 44.1548 48.613C44.1548 44.2831 47.6647 40.7731 51.9946 40.7731Z" fill="currentColor" />
+    <path class="text-zinc-950 dark:text-zinc-50" id="leg" d="M41.7601 59.4203V89.3975C41.4281 89.412 41.0947 89.4201 40.7599 89.4201C26.654 89.4201 14.9849 76.3817 13.0439 59.4203H41.7601Z" fill="currentColor" fill-opacity="0.666667"/>
+  </g>
+</svg>
