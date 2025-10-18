@@ -2,9 +2,15 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    "Space Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif:
+    "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+  --font-mono:
+    "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   --color-bblack-50: oklch(0.956 0.005 286.52);
   --color-bblack-100: oklch(0.915 0.009 286.33);
@@ -31,7 +37,8 @@
   --color-wblue-950: oklch(0.834 0.039 251.95);
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
 }
 

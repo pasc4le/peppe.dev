@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pretty": "prettier --check .",
+    "pretty:fix": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
