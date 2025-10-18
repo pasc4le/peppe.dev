@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { CollectionEntry } from "astro:content";
+  import Icon from "@iconify/svelte";
 
   export let project: CollectionEntry<"projects">;
 
@@ -13,10 +14,16 @@
   role="button"
   tabindex="0"
 >
-  <h3 class="font-medium font-mono">
-    {project.data.title}
-  </h3>
+  <div class="flex justify-center">
+    <h3 class="font-mono tracking-tight">
+      {project.data.title}
+    </h3>
+
+    <Icon icon="mdi:chevron-right" class="ml-auto" />
+  </div>
   {#if open}
-    <slot />
+    <div class="mt-2">
+      <slot />
+    </div>
   {/if}
 </div>

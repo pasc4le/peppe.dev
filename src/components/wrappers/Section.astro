@@ -4,10 +4,12 @@ interface Props {
   class?: string;
 }
 
-const { title, class: className } = Astro.props;
+const { title, class: className } = Astro.props;
 ---
 
-<span class="uppercase text-xs tracking-wider font-bold text-bblack-400">{title}</span>
+<h2 class="uppercase text-xs tracking-wider font-bold text-bblack-400">
+  {title}
+</h2>
 <section id={title} class:list={[className]}>
   <slot />
 </section>
