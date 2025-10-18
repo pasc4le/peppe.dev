@@ -12,9 +12,8 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write",
-      "git add"
+    "*.{js,ts,json,astro,svelte,md,mdx}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
