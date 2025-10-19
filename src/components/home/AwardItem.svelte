@@ -15,7 +15,6 @@
   };
 
   const date = moment(award.data.date);
-  console.log(date);
 </script>
 
 <div
