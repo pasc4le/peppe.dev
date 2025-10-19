@@ -4,10 +4,8 @@ repoProvider: github
 repoOwner: pasc4le
 repoName: bill-divider
 href: https://github.com/pasc4le/bill-divider
-
-sortOrder: 1
 ---
 
-![Bill Divider Cover](./cover.png)
+![Bill Divider Cover](/contents/bill-divider/cover.png)
 
 A webapp used to track and manage tasks between roommates.
