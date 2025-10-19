@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Main from "@/layouts/Main.astro";
+
+import Section from "@/components/wrappers/Section.astro";
+import Boxed from "@/components/wrappers/Boxed.astro";
+
+import Projects from "@/components/home/Projects.astro";
+---
+
+<Main>
+  <Boxed>
+    <div class="relative">
+      <h1
+        class="font-bold tracking-tight text-xl text-bblack-950 dark:text-bblack-50"
+      >
+        Projects Archive
+      </h1>
+      <a href="/">
+        <span
+          class="absolute -top-5 left-0 text-xs flex gap-1 items-center opacity-50 hover:opacity-70 font-normal cursor-pointer"
+        >
+          <Icon name="mdi:arrow-back" class="h-3 w-auto" />
+          Home
+        </span>
+      </a>
+    </div>
+    <hr class="my-2 border-bblack-100 mb-2 dark:border-bblack-800" />
+    <p class="mb-6">
+      These are all my projects, including the ones that are not active.
+    </p>
+    <Section title="All Projects">
+      <Projects />
+    </Section>
+  </Boxed>
+</Main>

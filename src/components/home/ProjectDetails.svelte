@@ -24,7 +24,13 @@
       Private
     </span>
   {:else}
-    <a href={details.latest?.url ?? "#"} class="link text-xs ignore-click">
+    <a
+      href={project.data.releaseHref ?? details.latest?.url ?? "#"}
+      class={[
+        "text-xs ignore-click",
+        details.latest.version == "Unreleased" ? "text-bblack-500" : "link",
+      ]}
+    >
       {details.latest.version}
     </a>
   {/if}

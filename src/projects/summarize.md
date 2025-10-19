@@ -6,6 +6,7 @@ repoName: summarize
 href: https://github.com/pasc4le/summarize
 
 sortOrder: 2
+archived: true
 ---
 
 A webapp used to track and manage tasks between roommates.
