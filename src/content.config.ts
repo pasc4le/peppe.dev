@@ -2,7 +2,7 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 const projects = defineCollection({
-  loader: glob({ pattern: "**/*.{mdx,md}", base: "./contents/projects" }),
+  loader: glob({ pattern: "**/*.{mdx,md}", base: "./src/contents/projects" }),
   schema: z.object({
     title: z.string(),
     repoProvider: z.enum(["github"]),
@@ -15,7 +15,7 @@ const projects = defineCollection({
 });
 
 const awards = defineCollection({
-  loader: glob({ pattern: "**/*.{mdx,md}", base: "./contents/awards" }),
+  loader: glob({ pattern: "**/*.{mdx,md}", base: "./src/contents/awards" }),
   schema: z.object({
     title: z.string(),
     href: z.string().optional(),
