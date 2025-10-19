@@ -64,3 +64,18 @@ a.link {
     color: theme(--color-purple-900);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  a.link {
+    color: theme(--color-blue-400);
+    text-decoration: underline;
+
+    &:visited, &:focus, &:active, &:focus-visible {
+      color: theme(--color-purple-300);
+    }
+
+    &:hover {
+      color: theme(--color-purple-400);
+    }
+  }
+}

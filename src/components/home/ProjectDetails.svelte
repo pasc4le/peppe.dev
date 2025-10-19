@@ -19,7 +19,7 @@
 {#if details}
   {#if details.private}
     <span
-      class="text-xs rounded-full border-1 border-bblack-100 px-1 ignore-click"
+      class="text-xs rounded-full border-1 border-bblack-100 dark:border-bblack-700 dark:text-bblack-400 px-1 ignore-click"
     >
       Private
     </span>
