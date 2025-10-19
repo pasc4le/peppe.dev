@@ -1,12 +1,11 @@
 ---
-title: Summarize
+title: Task Manager
 repoProvider: github
 repoOwner: pasc4le
-repoName: summarize
-href: https://github.com/pasc4le/summarize
+repoName: task-manager
+href: https://github.com/pasc4le/task-manager
 
 sortOrder: 2
-archived: true
 ---
 
 A webapp used to track and manage tasks between roommates.

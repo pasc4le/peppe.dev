@@ -1,11 +1,11 @@
 ---
-title: Bill Divider
+title: Summarize
 repoProvider: github
 repoOwner: pasc4le
-repoName: bill-divider
-href: https://github.com/pasc4le/bill-divider
+repoName: summarize
+href: https://github.com/pasc4le/summarize
 
-sortOrder: 1
+archived: true
 ---
 
 A webapp used to track and manage tasks between roommates.
