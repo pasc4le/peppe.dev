@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  filter?: (p: CollectionEntry<"projects">) => boolean;
+}
+
+import AwardRenderer from "./AwardRenderer.astro";
+import type { CollectionEntry } from "astro:content";
+
+let awards = (await getCollection("awards")).toSorted(
+  (a, b) => +b.data.date - +a.data.date,
+);
+---
+
+{awards.map((award) => <AwardRenderer {award} />)}

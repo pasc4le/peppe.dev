@@ -7,6 +7,7 @@ import Prose from "@/components/wrappers/Prose.astro";
 
 import Pill, { type PillProps } from "@/components/Pill.astro";
 
+import Awards from "@/components/home/Awards.astro";
 import Projects from "@/components/home/Projects.astro";
 import Welcome from "@/components/home/Welcome.mdx";
 import ExternalLink from "@/components/ExternalLink.astro";
@@ -52,7 +53,9 @@ const socials: PillProps[] = [
         <a href="/projects"> Check out the Projects Archive </a>
       </p>
     </Section>
-    <Section title="Awards and Certifications" class="mb-6" />
+    <Section title="Awards and Certifications" class="mb-6">
+      <Awards />
+    </Section>
     <Section title="Fun Facts and Hobbies" class="mb-6">
       I'm coloblind, that's why this page has good color contrast. My hobbies
       are reading, playing videogames, hiking and cooking.

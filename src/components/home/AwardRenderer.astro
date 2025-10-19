@@ -1,0 +1,16 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import AwardItem from "./AwardItem.svelte";
+
+interface Props {
+  award: CollectionEntry<"awards">;
+}
+
+const { award } = Astro.props;
+
+const { Content } = await render(award);
+---
+
+<AwardItem {award} client:load>
+  <Content />
+</AwardItem>
