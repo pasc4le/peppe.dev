@@ -2,7 +2,7 @@
 import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
-import vercel from "@astrojs/vercel";
+import vercel from "@astrojs/vercel/serverless";
 
 import icon from "astro-icon";
 
@@ -17,7 +17,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  adapter: vercel(),
+  adapter: vercel({}),
   env: {
     schema: {
       GITHUB_API_TOKEN: envField.string({ context: "server", access: "secret" })
