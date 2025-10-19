@@ -8,9 +8,11 @@ import icon from "astro-icon";
 
 import svelte from "@astrojs/svelte";
 
+import db from "@astrojs/db";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), icon(), svelte()],
+  integrations: [mdx(), icon(), svelte(), db()],
   vite: {
     plugins: [tailwindcss()],
   },

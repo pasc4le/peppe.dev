@@ -8,7 +8,7 @@ export async function GET() {
   const details: Record<string, ProjectDetails> = {};
 
   for (const project of projects) {
-    const result = await getProjectDetails(project.data);
+    const result = await getProjectDetails(project);
     if (result) details[project.id] = result;
   }
 
