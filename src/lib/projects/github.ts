@@ -35,7 +35,7 @@ export async function getRepo(
   if (latestRelease) {
     latest.version = latestRelease.data.tag_name;
 
-    if (!isPrivate) latest.url = latestRelease.data.url;
+    if (!isPrivate) latest.url = latestRelease.data.html_url;
   }
 
   return {

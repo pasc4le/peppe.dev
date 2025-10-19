@@ -1,9 +1,20 @@
 ---
 import { getCollection, render } from "astro:content";
 
-import ProjectRenderer from "./ProjectRenderer.astro";
+interface Props {
+  filter?: (p: CollectionEntry<"projects">) => boolean;
+}
 
-const projects = await getCollection("projects");
+import ProjectRenderer from "./ProjectRenderer.astro";
+import type { CollectionEntry } from "astro:content";
+
+const { filter } = Astro.props;
+
+let projects = (await getCollection("projects")).toSorted(
+  (a, b) => a.data.sortOrder - b.data.sortOrder,
+);
+
+if (filter) projects = projects.filter(filter);
 ---
 
 {projects.map((project) => <ProjectRenderer {project} />)}

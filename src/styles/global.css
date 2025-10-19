@@ -51,3 +51,16 @@ body {
     border-color: var(--color-blue-500);
   }
 }
+
+a.link {
+  color: theme(--color-blue-500);
+  text-decoration: underline;
+
+  &:visited, &:focus, &:active, &:focus-visible {
+    color: theme(--color-purple-700);
+  }
+
+  &:hover {
+    color: theme(--color-purple-900);
+  }
+}

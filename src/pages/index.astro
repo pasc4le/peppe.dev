@@ -45,7 +45,7 @@ const socials: PillProps[] = [
       {socials.map((social) => <Pill {...social} />)}
     </div>
     <Section title="Projects" class="mb-6">
-      <Projects />
+      <Projects filter={(p) => !p.data.archived} />
     </Section>
     <Section title="Awards and Certifications" class="mb-6" />
     <Section title="Fun Facts and Hobbies" class="mb-6">

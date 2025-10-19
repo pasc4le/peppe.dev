@@ -4,20 +4,21 @@
 
   export let project: CollectionEntry<"projects">;
 
-  const platformIconMapper = {
-    github: "mdi:github",
-    npm: "mdi:npm",
-    ghcr: "mdi:github",
-    docker: "mdi:docker",
-  };
-
   let open: boolean = false;
+
+  const openProject = (e: MouseEvent | KeyboardEvent) => {
+    if (
+      e.target &&
+      !(e.target as HTMLElement)?.classList.contains("ignore-click")
+    )
+      open = !open;
+  };
 </script>
 
 <div
-  class="py-1 my-1 border-b-1 border-bblack-100 dark:border-bblack-800 cursor-pointer"
-  on:click={() => (open = !open)}
-  on:keyup={(e) => e.key == "Enter" && (open = !open)}
+  class="py-1 my-1 border-b-1 border-bblack-100 dark:border-bblack-800 cursor-pointer select-none"
+  on:click={openProject}
+  on:keyup={(e) => e.key == "Enter" && openProject(e)}
   role="button"
   tabindex="0"
 >
@@ -26,7 +27,7 @@
       {project.data.title}
     </h3>
 
-    <div class="ml-auto">
+    <div class="ml-auto flex gap-1 items-center">
       <ProjectDetails {project} />
     </div>
   </div>
