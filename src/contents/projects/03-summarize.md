@@ -3,6 +3,7 @@ title: Summarize
 repoProvider: github
 repoOwner: pasc4le
 repoName: summarize
+repoHref: https://github.com/pasc4le/summarize
 
 archived: true
 ---

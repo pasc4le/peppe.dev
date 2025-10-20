@@ -21,7 +21,7 @@ if (filter) projects = projects.filter(filter);
   projects.map((project) => (
     <div class="py-1 my-1 border-b-1 border-bblack-100 dark:border-bblack-800 select-none">
       <div class="flex items-center">
-        <a href={project.data.href ?? `/projects/${project.id}`}>
+        <a href={project.data.archiveHref ?? `/projects/${project.id}`}>
           <h3 class="font-sans font-medium">{project.data.title}</h3>
         </a>
 

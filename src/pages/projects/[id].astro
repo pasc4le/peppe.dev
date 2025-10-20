@@ -1,17 +1,18 @@
 ---
 import type { GetStaticPaths } from "astro";
+
 import { Icon } from "astro-icon/components";
 
-import Main from "@/layouts/Main.astro";
-
-import Section from "@/components/wrappers/Section.astro";
-import Boxed from "@/components/wrappers/Boxed.astro";
-
-import Projects from "@/components/home/Projects.astro";
 import { getCollection } from "astro:content";
 import { getEntry } from "astro:content";
 import { render } from "astro:content";
+
+import Main from "@/layouts/Main.astro";
+
+import Boxed from "@/components/wrappers/Boxed.astro";
 import Prose from "@/components/wrappers/Prose.astro";
+
+import ProjectDetails from "@/components/home/ProjectDetails.svelte";
 
 export const getStaticPaths = (async () => {
   const projects = await getCollection("projects");
@@ -34,12 +35,15 @@ const { Content } = await render(entry);
 
 <Main>
   <Boxed>
-    <div class="relative">
+    <div class="relative flex items-center">
       <h1
         class="font-bold tracking-tight text-xl text-bblack-950 dark:text-bblack-50"
       >
         {entry.data.title}
       </h1>
+      <div class="ml-auto flex gap-1">
+        <ProjectDetails project={entry} client:load />
+      </div>
       <div
         class="absolute -top-5 left-0 text-xs opacity-50 hover:opacity-70 font-normal cursor-pointer"
       >

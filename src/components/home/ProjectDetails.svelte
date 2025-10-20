@@ -34,7 +34,7 @@
       {details.latest.version}
     </a>
   {/if}
-  <a href={!details.private ? project.data?.href : "#"}>
+  <a href={!details.private ? project.data?.repoHref : "#"}>
     <Icon
       icon={platformIconMapper[project.data.repoProvider]}
       class="ignore-click"

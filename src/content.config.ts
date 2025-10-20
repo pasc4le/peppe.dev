@@ -8,8 +8,9 @@ const projects = defineCollection({
     repoProvider: z.enum(["github"]),
     repoOwner: z.string(),
     repoName: z.string(),
-    href: z.string().optional(),
+    repoHref: z.string().optional(),
     releaseHref: z.string().optional(),
+    archiveHref: z.string().optional(),
     archived: z.boolean().optional().default(false),
   }),
 });
