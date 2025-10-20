@@ -1,0 +1,57 @@
+---
+import type { GetStaticPaths } from "astro";
+import { Icon } from "astro-icon/components";
+
+import Main from "@/layouts/Main.astro";
+
+import Section from "@/components/wrappers/Section.astro";
+import Boxed from "@/components/wrappers/Boxed.astro";
+
+import Projects from "@/components/home/Projects.astro";
+import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+import Prose from "@/components/wrappers/Prose.astro";
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection("projects");
+
+  return projects.map((p) => ({
+    params: {
+      id: p.id,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { id } = Astro.params;
+
+const entry = await getEntry("projects", id);
+
+if (!entry) throw new Error("Could not find project");
+
+const { Content } = await render(entry);
+---
+
+<Main>
+  <Boxed>
+    <div class="relative">
+      <h1
+        class="font-bold tracking-tight text-xl text-bblack-950 dark:text-bblack-50"
+      >
+        {entry.data.title}
+      </h1>
+      <div
+        class="absolute -top-5 left-0 text-xs opacity-50 hover:opacity-70 font-normal cursor-pointer"
+      >
+        <a href="/projects" class="flex gap-1 items-center">
+          <Icon name="mdi:arrow-back" class="h-3 w-auto" />
+          Projects Archive
+        </a>
+      </div>
+    </div>
+    <hr class="my-2 border-bblack-100 mb-2 dark:border-bblack-800" />
+    <Prose class="max-w-full">
+      <Content />
+    </Prose>
+  </Boxed>
+</Main>
