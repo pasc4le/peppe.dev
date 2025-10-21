@@ -1,5 +1,6 @@
 ---
 import { render, type CollectionEntry } from "astro:content";
+import Prose from "@/components/wrappers/Prose.astro";
 import AwardItem from "./AwardItem.svelte";
 
 interface Props {
@@ -12,5 +13,7 @@ const { Content } = await render(award);
 ---
 
 <AwardItem {award} client:load>
-  <Content />
+  <Prose class="max-w-full">
+    <Content />
+  </Prose>
 </AwardItem>
