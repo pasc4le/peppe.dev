@@ -1,0 +1,19 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  fullWidth?: boolean;
+}
+
+const { src, alt, fullWidth = false } = Astro.props;
+---
+
+{
+  fullWidth ? (
+    <img {src} {alt} />
+  ) : (
+    <p>
+      <img {src} {alt} />
+    </p>
+  )
+}
