@@ -1,0 +1,40 @@
+---
+title: Task Manager
+repoProvider: github
+repoOwner: pasc4le
+repoName: task-manager
+repoHref: https://github.com/pasc4le/task-manager
+---
+
+import Button from "@/components/general/Button.astro";
+import Image from "@/components/general/Image.astro";
+import Inline from "@/components/general/Inline.astro";
+import { Icon } from "astro-icon/components";
+
+<Image
+  src="/contents/task-manager/cover.png"
+  alt="Task Manager Cover"
+  fullWidth={true}
+/>
+
+A webapp used to track and manage tasks between roommates. It's as simple as it sounds, you register,
+add tasks and members and it generates a rotating schedule instantly. It also supports
+Telegram notifications when new tasks are assigned and a leaderboard of points to gamify your chores.
+
+<Inline>
+  <Button
+    type="primary"
+    href="https://tm.peppe.dev"
+  >
+    Check it out
+  </Button>
+
+  <Button
+    type="secondary"
+    href="https://github.com/pasc4le/task-manager"
+  >
+    Github
+    
+    <Icon name="mdi:github" />
+  </Button>
+</Inline>
