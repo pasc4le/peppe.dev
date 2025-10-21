@@ -1,0 +1,28 @@
+---
+title: Supersup
+repoProvider: github
+repoOwner: codegiik
+repoName: supersup
+
+private: true
+---
+
+This is a project commissioned from an hotel/wedding place in southern Italy. It's a platform
+used to manage messages coming from different socials all in one dashboard. This speeds up
+chat support, customer experience and can be attached to other services (e.g. CRMs, Hotel Management Systems, etc.)
+in order to have a complete overview of the interactions with the customer. Unfortunately, due to
+copyright I cannot show a demo of it, but I can explain how it was made.
+
+Each social media message provider interacts with the platform through a service called "agent". This agent
+is usually a web server that gets called via WebHooks from the social media provider (e.g. for Meta, WhatsApp, etc).
+
+Then, these agents communicate over a Redis pub/sub channel to a master agent. This agent serves different purpouses:
+receiving all the messages and updates from the satellite agents, check the health and existence of satallite agents,
+handling the RESTful API and serving the frontend.
+
+The platform is supposed to handle multiple tenants, each with their own collection of social media providers for
+messages. The modularity of this project makes it very easily upgradable. Because agents are completely independent
+from the main server, they can be written in any language, but an SDK to write them following the communication protocol
+was provided in TypeScript.
+
+It was a fun ride, I've learnt a lot and it was fun working in a team.

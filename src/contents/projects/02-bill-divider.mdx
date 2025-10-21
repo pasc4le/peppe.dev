@@ -1,0 +1,26 @@
+---
+title: Bill Divider
+repoProvider: github
+repoOwner: pasc4le
+repoName: bill-divider
+repoHref: https://github.com/pasc4le/bill-divider
+
+private: true
+---
+
+import Button from "@/components/general/Button.astro";
+import Image from "@/components/general/Image.astro";
+
+<Image
+  src="/contents/bill-divider/cover.png"
+  alt="Bill Divider Cover"
+  fullWidth={true}
+/>
+
+A simple webapp built with Next.js to handle bill splitting between friends. It supports two modes:
+manual mode, where by inputting a custom formatted string you can get a bill summary;
+automatic mode, that parses your bill thanks to OCR and LLMs.
+
+<Button type="primary" href="https://bill-divider.peppe.dev">
+  Try it out now
+</Button>
