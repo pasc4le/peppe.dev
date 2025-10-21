@@ -33,7 +33,7 @@ if (!entry) throw new Error("Could not find project");
 const { Content } = await render(entry);
 ---
 
-<Main>
+<Main title={entry.data.title}>
   <Boxed>
     <div class="relative flex items-center">
       <h1
