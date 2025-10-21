@@ -23,7 +23,7 @@ export async function getRepo(
     })
     .catch(console.info);
 
-  const isPrivate = info ? info.data.private : true;
+  const isPrivate = info ? info.data.private : false;
 
   const latest: {
     version: string;
@@ -39,7 +39,6 @@ export async function getRepo(
   }
 
   return {
-    private: isPrivate,
     latest,
   };
 }

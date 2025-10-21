@@ -17,24 +17,21 @@
 </script>
 
 {#if details}
-  {#if details.private}
+  {#if project.data.private}
     <span
       class="text-xs rounded-full border-1 border-bblack-100 dark:border-bblack-700 dark:text-bblack-400 px-1 ignore-click"
     >
       Private
     </span>
-  {:else}
+  {:else if details.latest.version != "Unreleased"}
     <a
       href={project.data.releaseHref ?? details.latest?.url ?? "#"}
-      class={[
-        "text-xs ignore-click",
-        details.latest.version == "Unreleased" ? "text-bblack-500" : "link",
-      ]}
+      class="text-xs ignore-click link"
     >
       {details.latest.version}
     </a>
   {/if}
-  <a href={!details.private ? project.data?.repoHref : "#"}>
+  <a href={project.data?.repoHref ?? "#"} class="opacity-80 hover:opacity-100">
     <Icon
       icon={platformIconMapper[project.data.repoProvider]}
       class="ignore-click"

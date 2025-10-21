@@ -11,6 +11,7 @@ const projects = defineCollection({
     repoHref: z.string().optional(),
     releaseHref: z.string().optional(),
     archiveHref: z.string().optional(),
+    private: z.boolean().optional().default(false),
     archived: z.boolean().optional().default(false),
   }),
 });

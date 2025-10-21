@@ -3,7 +3,6 @@ import * as github from "./github.ts";
 import { db, eq, ProjectDetailsCache } from "astro:db";
 
 export interface ProjectDetails {
-  private: boolean;
   latest: {
     version: string;
     url?: string;
