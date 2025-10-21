@@ -15,9 +15,9 @@ const { type = "secondary", href, target, class: className } = Astro.props;
   <button
     class:list={[
       {
-        "border-bblack-500 hover:bg-bblack-700 bg-bblack-950 text-white":
+        "border-bblack-500 hover:bg-bblack-700 bg-bblack-950 text-white dark:bg-bblack-50 dark:hover:bg-bblack-100 dark:text-bblack-950 dark:border-bblack-100":
           type == "primary",
-        "border-bblack-50 hover:bg-bblack-50 text-bblack-900":
+        "border-bblack-50 hover:bg-bblack-50 text-bblack-900 dark:bg-bblack-900 dark:text-bblack-50 dark:border-bblack-800 dark:hover:bg-bblack-800":
           type == "secondary",
       },
       "min-h-10 px-3 w-auto min-w-18 rounded-lg cursor-pointer shadow-sm border-1 flex gap-1 items-center",
