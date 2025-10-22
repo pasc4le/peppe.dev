@@ -13,6 +13,8 @@ const projects = defineCollection({
     archiveHref: z.string().optional(),
     private: z.boolean().optional().default(false),
     archived: z.boolean().optional().default(false),
+
+    override_creationDate: z.string().optional(),
   }),
 });
 

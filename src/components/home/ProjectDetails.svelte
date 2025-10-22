@@ -32,9 +32,11 @@
       {details.latest.version}
     </a>
   {/if}
-  {#if details.activity.createdAt}
+  {#if project.data.override_creationDate || details.activity.createdAt}
     <span class="text-xs dark:text-bblack-400">
-      {moment(details.activity.createdAt).format("MMM Y")}
+      {moment(
+        project.data.override_creationDate ?? details.activity.createdAt,
+      ).format("MMM Y")}
     </span>
   {/if}
   <a href={project.data?.repoHref ?? "#"} class="opacity-80 hover:opacity-100">
