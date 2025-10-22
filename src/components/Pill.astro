@@ -17,7 +17,7 @@ const { icon, text, href } = Astro.props;
     <div
       class="flex gap-2 items-center justify-center max-w-fit px-3 py-1 rounded-4xl border-1 border-zinc-200 dark:border-bblack-700 cursor-pointer dark:hover:bg-bblack-800 hover:bg-zinc-50"
     >
-      <Icon name={icon} class="h-4 w-auto" />
+      <Icon name={icon} class="h-4 w-auto" is:inline={true} />
       <p>{text}</p>
     </div>
   </a>
