@@ -16,8 +16,8 @@ copyright I cannot show a demo of it, but I can explain how it was made.
 Each social media message provider interacts with the platform through a service called "agent". This agent
 is usually a web server that gets called via WebHooks from the social media provider (e.g. for Meta, WhatsApp, etc).
 
-Then, these agents communicate over a Redis pub/sub channel to a master agent. This agent serves different purpouses:
-receiving all the messages and updates from the satellite agents, check the health and existence of satallite agents,
+Then, these agents communicate over a Redis pub/sub channel to a master agent. This agent serves different purposes:
+receiving all the messages and updates from the satellite agents, check the health and existence of satellite agents,
 handling the RESTful API and serving the frontend.
 
 The platform is supposed to handle multiple tenants, each with their own collection of social media providers for
