@@ -1,0 +1,27 @@
+---
+title: Summarize
+repoProvider: github
+repoOwner: pasc4le
+repoName: summarize
+repoHref: https://github.com/pasc4le/summarize
+
+archived: true
+---
+
+import Button from "@/components/general/Button.astro";
+import { Icon } from "astro-icon/components";
+
+This is a CLI to summurize videos into markdown files. It uses whisper.cpp in order
+to transcirbe the videos locally and then Gemini to generate the markdown from
+the transcription. It can additionally generates subtitles for your videos, from
+the whisper output.
+
+This was my first attempt at using AI for coding, I've made this project with
+[opencode](https://opencode.ai/) using Github Copilot with Claude Sonnet 4.1.
+I still have mixed feelings about it, but it seems a good tool for generating
+small personal projects.
+
+<Button type="primary" href="https://github.com/pasc4le/nascondino">
+  Github
+  <Icon name="mdi:github" />
+</Button>
