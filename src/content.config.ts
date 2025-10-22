@@ -14,7 +14,7 @@ const projects = defineCollection({
     private: z.boolean().optional().default(false),
     archived: z.boolean().optional().default(false),
 
-    override_creationDate: z.string().optional(),
+    override_creationDate: z.date().optional(),
   }),
 });
 
