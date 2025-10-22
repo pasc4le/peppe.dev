@@ -2,6 +2,7 @@
   import type { CollectionEntry } from "astro:content";
   import { detailsStore } from "./ProjectDetails.store";
   import Icon from "@iconify/svelte";
+  import moment from "moment";
 
   const platformIconMapper = {
     github: "mdi:github",
@@ -30,6 +31,11 @@
     >
       {details.latest.version}
     </a>
+  {/if}
+  {#if details.activity.createdAt}
+    <span class="text-xs dark:text-bblack-400">
+      {moment(details.activity.createdAt).format("MMM Y")}
+    </span>
   {/if}
   <a href={project.data?.repoHref ?? "#"} class="opacity-80 hover:opacity-100">
     <Icon

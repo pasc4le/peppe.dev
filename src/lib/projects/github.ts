@@ -32,6 +32,14 @@ export async function getRepo(
     version: "Unreleased",
   };
 
+  const activity: {
+    createdAt?: string;
+  } = {};
+
+  if (info) {
+    activity.createdAt = info.data.created_at;
+  }
+
   if (latestRelease) {
     latest.version = latestRelease.data.tag_name;
 
@@ -40,5 +48,6 @@ export async function getRepo(
 
   return {
     latest,
+    activity,
   };
 }

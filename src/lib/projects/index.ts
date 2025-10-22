@@ -7,6 +7,9 @@ export interface ProjectDetails {
     version: string;
     url?: string;
   };
+  activity: {
+    createdAt?: string;
+  };
 }
 
 type Project = CollectionEntry<"projects">;
