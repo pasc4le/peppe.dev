@@ -9,6 +9,8 @@ import Pill, { type PillProps } from "@/components/Pill.astro";
 
 import Awards from "@/components/home/Awards.astro";
 import Projects from "@/components/home/Projects.astro";
+import Education from "@/components/home/Education.astro";
+import Experience from "@/components/home/Experience.astro";
 import Welcome from "@/components/home/Welcome.mdx";
 import ExternalLink from "@/components/ExternalLink.astro";
 
@@ -52,6 +54,12 @@ const socials: PillProps[] = [
       >
         <a href="/projects"> Go to the Archive </a>
       </p>
+    </Section>
+    <Section title="Education" class="mb-6">
+      <Education />
+    </Section>
+    <Section title="Experience" class="mb-6">
+      <Experience />
     </Section>
     <Section title="Awards and Certifications" class="mb-8">
       <Awards />

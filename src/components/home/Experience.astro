@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content";
+import ExperienceRenderer from "./ExperienceRenderer.astro";
+
+const experience = (await getCollection("experience")).toSorted(
+  (a, b) => +b.data.startDate - +a.data.startDate,
+);
+---
+
+{experience.map((entry) => <ExperienceRenderer {entry} />)}

@@ -1,0 +1,23 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import Prose from "@/components/wrappers/Prose.astro";
+import Timeline from "./Timeline.svelte";
+
+interface Props {
+  entry: CollectionEntry<"experience">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Timeline
+  entry={entry}
+  subtitle={entry.data.company}
+  startDate={entry.data.startDate}
+  endDate={entry.data.endDate}
+>
+  <Prose class="max-w-full">
+    <Content />
+  </Prose>
+</Timeline>
