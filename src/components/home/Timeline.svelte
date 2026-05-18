@@ -5,11 +5,12 @@
   interface Props {
     entry: CollectionEntry<"education"> | CollectionEntry<"experience">;
     subtitle: string;
+    type?: string;
     startDate: Date;
     endDate?: Date;
   }
 
-  let { entry, subtitle, startDate, endDate }: Props = $props();
+  let { entry, subtitle, type, startDate, endDate }: Props = $props();
 
   const fmt = (d: Date) => moment(d).format("MMM Y");
 </script>
@@ -32,8 +33,17 @@
         {fmt(startDate)} &mdash; {endDate ? fmt(endDate) : "Present"}
       </span>
     </div>
-    <p class="text-xs text-bblack-400 dark:text-bblack-500">
+    <p
+      class="text-xs text-bblack-400 dark:text-bblack-500 flex items-center gap-1"
+    >
       {subtitle}
+      {#if type}
+        <span
+          class="text-[0.625rem] rounded-full border-1 border-bblack-100 dark:border-bblack-700 dark:text-bblack-400 px-1 leading-normal"
+        >
+          {type}
+        </span>
+      {/if}
     </p>
     <div class="mt-1 text-sm text-bblack-600 dark:text-bblack-400">
       <slot />
