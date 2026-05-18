@@ -1,0 +1,43 @@
+---
+title: pocket
+repoProvider: github
+repoOwner: pasc4le-ai-sandbox
+repoName: pocket
+repoHref: https://github.com/pasc4le-ai-sandbox/pocket
+---
+
+import Button from "@/components/general/Button.astro";
+import { Icon } from "astro-icon/components";
+
+pocket is a dead-simple file clipboard for the terminal. Add files or directories to a persistent clipboard,
+then release them (copy or move) to any directory later — all from the command line.
+
+The clipboard is stored as a JSON file at `~/.pocketrc`, and paths are resolved to absolute so it works
+regardless of your current working directory. Built with [cobra](https://github.com/spf13/cobra) in Go.
+
+```bash
+# Install
+go install github.com/pasc4le-ai-sandbox/pocket@latest
+
+# Add files or directories
+pocket foo.txt bar/ baz.pdf
+
+# List what's in the clipboard
+pocket -l
+
+# Copy everything to the current directory
+pocket -r
+
+# Move instead of copy
+pocket -r -c
+
+# Remove item #2 from the clipboard
+pocket -d 2
+```
+
+Licensed under the EUPL v1.2.
+
+<Button type="primary" href="https://github.com/pasc4le-ai-sandbox/pocket">
+  Github
+  <Icon name="mdi:github" is:inline={true} class="text-current h-6 w-6" />
+</Button>
