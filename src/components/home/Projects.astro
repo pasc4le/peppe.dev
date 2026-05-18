@@ -11,7 +11,7 @@ import type { CollectionEntry } from "astro:content";
 const { filter } = Astro.props;
 
 let projects = (await getCollection("projects")).toSorted((a, b) =>
-  a.id.localeCompare(b.id),
+  b.id.localeCompare(a.id),
 );
 
 if (filter) projects = projects.filter(filter);
