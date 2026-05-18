@@ -17,7 +17,7 @@
 <div class="relative pl-6 pb-4 timeline-item">
   <!-- dot -->
   <div
-    class="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-bblack-50 dark:ring-bblack-950 z-10"
+    class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950"
   ></div>
 
   <!-- content -->
@@ -42,7 +42,7 @@
     content: "";
     position: absolute;
     left: 5px;
-    top: 0;
+    top: 14px;
     bottom: 0;
     width: 1px;
     background: repeating-linear-gradient(
@@ -65,6 +65,6 @@
   }
 
   .timeline-item:last-child::before {
-    bottom: 50%;
+    display: none;
   }
 </style>
