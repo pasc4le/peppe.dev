@@ -17,11 +17,11 @@
 <div class="relative pl-8 timeline-item">
   <!-- dot -->
   <div
-    class="absolute left-[9px] top-2 w-3 h-3 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950 z-10"
+    class="absolute left-[9px] top-[0.35rem] w-3 h-3 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950 z-10"
   ></div>
 
   <!-- content -->
-  <div class="pt-4 pb-5">
+  <div class="pb-5">
     <h3 class="font-sans font-medium text-sm">
       {entry.data.title}
     </h3>
@@ -47,8 +47,8 @@
     width: 1px;
     background: repeating-linear-gradient(
       to bottom,
-      var(--color-bblack-200) 0,
-      var(--color-bblack-200) 3px,
+      var(--color-bblack-800) 0,
+      var(--color-bblack-800) 3px,
       transparent 3px,
       transparent 6px
     );
@@ -67,6 +67,6 @@
   /* last item: line stops at the dot's center */
   .timeline-item:last-child::before {
     bottom: auto;
-    height: 14px;
+    height: 0.725rem;
   }
 </style>
