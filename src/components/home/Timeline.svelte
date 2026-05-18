@@ -17,19 +17,23 @@
 <div class="relative pl-8 timeline-item">
   <!-- dot -->
   <div
-    class="absolute left-[9px] top-[0.35rem] w-3 h-3 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950 z-10"
+    class="absolute left-[9px] top-0 w-3 h-3 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950 z-10"
   ></div>
 
   <!-- content -->
   <div class="pb-5">
-    <h3 class="font-sans font-medium text-sm">
-      {entry.data.title}
-    </h3>
+    <div class="flex items-baseline">
+      <h3 class="font-sans font-medium text-sm">
+        {entry.data.title}
+      </h3>
+      <span
+        class="ml-auto text-xs text-bblack-300 dark:text-bblack-600 shrink-0"
+      >
+        {fmt(startDate)} &mdash; {endDate ? fmt(endDate) : "Present"}
+      </span>
+    </div>
     <p class="text-xs text-bblack-400 dark:text-bblack-500">
       {subtitle}
-    </p>
-    <p class="text-xs text-bblack-300 dark:text-bblack-600 mt-0.5">
-      {fmt(startDate)} &mdash; {endDate ? fmt(endDate) : "Present"}
     </p>
     <div class="mt-1 text-sm text-bblack-600 dark:text-bblack-400">
       <slot />
@@ -67,6 +71,6 @@
   /* last item: line stops at the dot's center */
   .timeline-item:last-child::before {
     bottom: auto;
-    height: 0.725rem;
+    height: 0.375rem;
   }
 </style>
