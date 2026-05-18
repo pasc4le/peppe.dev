@@ -41,14 +41,14 @@
   .timeline-item::before {
     content: "";
     position: absolute;
-    left: 5px;
+    left: 4.5px;
     top: 14px;
     bottom: 0;
     width: 1px;
     background: repeating-linear-gradient(
       to bottom,
-      var(--color-bblack-200) 0,
-      var(--color-bblack-200) 3px,
+      var(--color-bblack-800) 0,
+      var(--color-bblack-800) 3px,
       transparent 3px,
       transparent 6px
     );
