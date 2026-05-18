@@ -17,11 +17,9 @@
   };
 </script>
 
-<div
-  class="py-1 my-1 border-b-1 border-bblack-100 dark:border-bblack-800 cursor-pointer select-none"
->
+<div class="py-1 my-1 border-b-1 border-bblack-100 dark:border-bblack-800">
   <div
-    class="flex items-center"
+    class="flex items-center cursor-pointer select-none"
     on:click={openProject}
     on:keyup={(e) => e.key == "Enter" && openProject(e)}
     role="button"
