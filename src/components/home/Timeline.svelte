@@ -14,14 +14,14 @@
   const fmt = (d: Date) => moment(d).format("MMM Y");
 </script>
 
-<div class="relative pl-6 pb-4 timeline-item">
+<div class="relative pl-8 timeline-item">
   <!-- dot -->
   <div
-    class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950"
+    class="absolute left-[9px] top-2 w-3 h-3 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950 z-10"
   ></div>
 
   <!-- content -->
-  <div>
+  <div class="pt-4 pb-5">
     <h3 class="font-sans font-medium text-sm">
       {entry.data.title}
     </h3>
@@ -41,14 +41,14 @@
   .timeline-item::before {
     content: "";
     position: absolute;
-    left: 4.5px;
-    top: 14px;
+    left: 14.5px;
+    top: 0;
     bottom: 0;
     width: 1px;
     background: repeating-linear-gradient(
       to bottom,
-      var(--color-bblack-800) 0,
-      var(--color-bblack-800) 3px,
+      var(--color-bblack-200) 0,
+      var(--color-bblack-200) 3px,
       transparent 3px,
       transparent 6px
     );
@@ -64,7 +64,9 @@
     );
   }
 
+  /* last item: line stops at the dot's center */
   .timeline-item:last-child::before {
-    display: none;
+    bottom: auto;
+    height: 14px;
   }
 </style>
