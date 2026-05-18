@@ -7,4 +7,6 @@ const education = (await getCollection("education")).toSorted(
 );
 ---
 
-{education.map((entry) => <EducationRenderer {entry} />)}
+<div class="mt-2">
+  {education.map((entry) => <EducationRenderer {entry} />)}
+</div>

@@ -7,4 +7,6 @@ const experience = (await getCollection("experience")).toSorted(
 );
 ---
 
-{experience.map((entry) => <ExperienceRenderer {entry} />)}
+<div class="mt-2">
+  {experience.map((entry) => <ExperienceRenderer {entry} />)}
+</div>
