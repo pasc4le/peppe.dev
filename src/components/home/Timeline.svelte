@@ -53,9 +53,7 @@
           </span>
         {/if}
       </div>
-      <span
-        class="text-xs text-bblack-300 dark:text-bblack-600 shrink-0 md:ml-auto"
-      >
+      <span class="text-xs dark:text-bblack-400 shrink-0 md:ml-auto">
         {fmt(startDate)} &mdash; {endDate ? fmt(endDate) : "Present"}
       </span>
     </div>
