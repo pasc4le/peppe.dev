@@ -33,19 +33,28 @@
 
   <!-- content -->
   <div class="pb-1.5">
-    <div class="flex items-baseline gap-1">
-      <h3 class="font-sans font-medium text-sm flex items-center gap-1">
-        {entry.data.title}
+    <div class="flex flex-col md:flex-row md:items-baseline gap-1">
+      {#if type}
+        <span
+          class="text-[0.625rem] rounded-full border-1 border-bblack-100 dark:border-bblack-700 dark:text-bblack-400 px-1 leading-normal font-normal whitespace-nowrap w-fit md:hidden"
+        >
+          {type}
+        </span>
+      {/if}
+      <div class="flex items-baseline gap-1">
+        <h3 class="font-sans font-medium text-sm">
+          {entry.data.title}
+        </h3>
         {#if type}
           <span
-            class="text-[0.625rem] rounded-full border-1 border-bblack-100 dark:border-bblack-700 dark:text-bblack-400 px-1 leading-normal font-normal"
+            class="text-[0.625rem] rounded-full border-1 border-bblack-100 dark:border-bblack-700 dark:text-bblack-400 px-1 leading-normal font-normal whitespace-nowrap hidden md:inline"
           >
             {type}
           </span>
         {/if}
-      </h3>
+      </div>
       <span
-        class="ml-auto text-xs text-bblack-300 dark:text-bblack-600 shrink-0"
+        class="text-xs text-bblack-300 dark:text-bblack-600 shrink-0 md:ml-auto"
       >
         {fmt(startDate)} &mdash; {endDate ? fmt(endDate) : "Present"}
       </span>
