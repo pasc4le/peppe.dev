@@ -5,13 +5,22 @@
   interface Props {
     entry: CollectionEntry<"education"> | CollectionEntry<"experience">;
     subtitle: string;
+    subtitleHref?: string;
     type?: string;
     location?: string;
     startDate: Date;
     endDate?: Date;
   }
 
-  let { entry, subtitle, type, location, startDate, endDate }: Props = $props();
+  let {
+    entry,
+    subtitle,
+    subtitleHref,
+    type,
+    location,
+    startDate,
+    endDate,
+  }: Props = $props();
 
   const fmt = (d: Date) => moment(d).format("MMM Y");
 </script>
@@ -43,7 +52,18 @@
     </div>
     <div class="flex items-baseline">
       <p class="text-xs text-bblack-400 dark:text-bblack-500">
-        {subtitle}
+        {#if subtitleHref}
+          <a
+            href={subtitleHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline-offset-2 hover:underline"
+          >
+            {subtitle}
+          </a>
+        {:else}
+          {subtitle}
+        {/if}
       </p>
       {#if location}
         <span
