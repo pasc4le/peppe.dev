@@ -6,11 +6,12 @@
     entry: CollectionEntry<"education"> | CollectionEntry<"experience">;
     subtitle: string;
     type?: string;
+    location?: string;
     startDate: Date;
     endDate?: Date;
   }
 
-  let { entry, subtitle, type, startDate, endDate }: Props = $props();
+  let { entry, subtitle, type, location, startDate, endDate }: Props = $props();
 
   const fmt = (d: Date) => moment(d).format("MMM Y");
 </script>
@@ -40,9 +41,18 @@
         {fmt(startDate)} &mdash; {endDate ? fmt(endDate) : "Present"}
       </span>
     </div>
-    <p class="text-xs text-bblack-400 dark:text-bblack-500">
-      {subtitle}
-    </p>
+    <div class="flex items-baseline">
+      <p class="text-xs text-bblack-400 dark:text-bblack-500">
+        {subtitle}
+      </p>
+      {#if location}
+        <span
+          class="ml-auto text-xs text-bblack-300 dark:text-bblack-600 shrink-0"
+        >
+          {location}
+        </span>
+      {/if}
+    </div>
     <div class="mt-0.5 text-sm text-bblack-600 dark:text-bblack-400">
       <slot />
     </div>

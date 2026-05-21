@@ -23,6 +23,7 @@ const education = defineCollection({
   schema: z.object({
     title: z.string(),
     institution: z.string(),
+    location: z.string().optional(),
     startDate: z.coerce.date(),
     endDate: z.coerce.date().optional(),
   }),
@@ -34,6 +35,7 @@ const experience = defineCollection({
     title: z.string(),
     company: z.string(),
     type: z.string().optional(),
+    location: z.string().optional(),
     startDate: z.coerce.date(),
     endDate: z.coerce.date().optional(),
   }),
