@@ -28,8 +28,8 @@
     <h3 class="font-sans font-medium">
       {award.data.title}
     </h3>
-    <span class="ml-auto opacity-70 text-sm">
-      {date.format("Do MMM Y")}
+    <span class="ml-auto text-xs dark:text-bblack-400">
+      {date.format("MMM Y")}
     </span>
   </div>
   {#if open}

@@ -19,7 +19,8 @@ export default defineConfig({
   adapter: vercel(),
   env: {
     schema: {
-      GITHUB_API_TOKEN: envField.string({ context: "server", access: "secret" })
+      GITHUB_API_TOKEN: envField.string({ context: "server", access: "secret" }),
+      URL_SHORTNER_HOST: envField.string({ context: "server", access: "public" })
     }
   }
 });

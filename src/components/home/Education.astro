@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+import EducationRenderer from "./EducationRenderer.astro";
+
+const education = (await getCollection("education")).toSorted(
+  (a, b) => +b.data.startDate - +a.data.startDate,
+);
+---
+
+<div class="mt-3">
+  {education.map((entry) => <EducationRenderer {entry} />)}
+</div>
