@@ -16,11 +16,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  adapter: vercel(),
+  adapter: vercel({
+    middlewareMode: 'edge',
+  }),
   env: {
     schema: {
       GITHUB_API_TOKEN: envField.string({ context: "server", access: "secret" }),
-      URL_SHORTNER_HOST: envField.string({ context: "server", access: "public" })
+      URL_SHORTNER_HOST: envField.string({ context: "server", access: "secret" })
     }
   }
 });
