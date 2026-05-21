@@ -1,0 +1,21 @@
+---
+export const prerender = false;
+
+const { uri } = Astro.params;
+const host = import.meta.env.URL_SHORTNER_HOST;
+
+if (uri && host) {
+  return Astro.redirect(`${host}/${uri}`, 302);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirect</title>
+  </head>
+  <body>
+    <p>Missing URL_SHORTNER_HOST or invalid path.</p>
+  </body>
+</html>

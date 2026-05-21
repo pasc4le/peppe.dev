@@ -16,9 +16,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  adapter: vercel({
-    middlewareMode: 'edge',
-  }),
+  adapter: vercel(),
   env: {
     schema: {
       GITHUB_API_TOKEN: envField.string({ context: "server", access: "secret" }),

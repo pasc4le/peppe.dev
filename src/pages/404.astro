@@ -1,0 +1,33 @@
+---
+const baseUrl = import.meta.env.URL_SHORTNER_HOST || "";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Page not found — Redirecting</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #f5f5f5;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Redirecting…</p>
+  </body>
+  <script define:vars={{ baseUrl }}>
+    if (baseUrl) {
+      window.location.replace(baseUrl + window.location.pathname);
+    } else {
+      document.body.innerHTML = "<p>404 — Page not found</p>";
+    }
+  </script>
+</html>
