@@ -18,11 +18,11 @@
 <div class="relative pl-8 timeline-item">
   <!-- dot -->
   <div
-    class="absolute left-[9px] top-0 w-3 h-3 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-2 ring-white dark:ring-bblack-950 z-10"
+    class="absolute left-[10px] top-1 w-2 h-2 rounded-full bg-bblack-300 dark:bg-bblack-600 ring-1.5 ring-white dark:ring-bblack-950 z-10"
   ></div>
 
   <!-- content -->
-  <div class="pb-5">
+  <div class="pb-1.5">
     <div class="flex items-baseline gap-1">
       <h3 class="font-sans font-medium text-sm flex items-center gap-1">
         {entry.data.title}
@@ -43,7 +43,7 @@
     <p class="text-xs text-bblack-400 dark:text-bblack-500">
       {subtitle}
     </p>
-    <div class="mt-1 text-sm text-bblack-600 dark:text-bblack-400">
+    <div class="mt-0.5 text-sm text-bblack-600 dark:text-bblack-400">
       <slot />
     </div>
   </div>
@@ -53,7 +53,7 @@
   .timeline-item::before {
     content: "";
     position: absolute;
-    left: 14.5px;
+    left: 13px;
     top: 0;
     bottom: 0;
     width: 1px;
